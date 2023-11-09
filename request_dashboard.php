@@ -191,7 +191,7 @@ include('shared/connection.php');
 
                 });
             </script>
-            </head>
+            
             <body>
 
             <div id="profile">
@@ -226,21 +226,51 @@ include('shared/connection.php');
                     ?>
 
 <!--                    for supervisor-->
-                    <?php
-                    $sql="SELECT * FROM student WHERE id='$id'";
-                    $r=mysqli_query($con,$sql);
-                    $employ=mysqli_fetch_assoc($r);
-                    $lect_id=$employ['supervisor_id'];
-                    $result=mysqli_query($con, "SELECT * FROM tbl_supervisors WHERE supervisor_id=$lect_id");
-                    $row=mysqli_fetch_assoc($result);
-                    $sname=$row['supervisor_name'];
-                        $index=$employ['supervisor_id'];
-                        echo "<tr>";
-                        echo "<td>"."Project Work Supervisor(".$sname.")</td>";
-                        echo "<td>".
-                            "<button type='button' id='supervisor'> Send Request </button>";
+<!-- for supervisor -->
+<?php
+$sql = "SELECT * FROM student WHERE id='$id'";
+$r = mysqli_query($con, $sql);
 
-                        ?>
+if ($r) {
+$employ = mysqli_fetch_assoc($r);
+
+if ($employ && isset($employ['supervisor_id'])) {
+$lect_id = $employ['supervisor_id'];
+$result = mysqli_query($con, "SELECT * FROM tbl_supervisors WHERE supervisor_id=$lect_id");
+
+if ($result) {
+$row = mysqli_fetch_assoc($result);
+$sname = $row['supervisor_name'];
+$index = $employ['supervisor_id'];
+
+echo "<tr>";
+echo "<td>" . "Project Work Supervisor(" . $sname . ")</td>";
+echo "<td>" .
+"<button type='button' id='supervisor'> Send Request </button>";
+
+?>
+<input type="hidden" name="text" class="super" value="<?php echo $index; ?>">
+<?php
+
+echo "</td>";
+echo "</tr>";
+} else {
+echo "<tr>";
+echo "<td colspan='2'>Error fetching supervisor data</td>";
+echo "</tr>";
+}
+} else {
+echo "<tr>";
+echo "<td colspan='2'>No Project Work Supervisor assigned</td>";
+echo "</tr>";
+}
+} else {
+echo "<tr>";
+echo "<td colspan='2'>Error executing query</td>";
+echo "</tr>";
+}
+?>
+
                         <input type="hidden" name="text" class= "super" value="<?php echo $index;?>">
                         <?php
 
@@ -280,7 +310,7 @@ include('shared/connection.php');
 
 
             </div>
-        </div>
+
 
         <style>
             .request{
@@ -418,6 +448,4 @@ include('shared/connection.php');
 
             }
         </style>
-    </div>
-</body>
-</html>
+    
