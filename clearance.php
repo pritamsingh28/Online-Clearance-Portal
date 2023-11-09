@@ -74,7 +74,7 @@ $id=$_SESSION['id'];
                 <td>SRC Officer </td>
                 <?php
                 $id=$_SESSION['id'];
-                $query = "SELECT student.id,student.index_no,student.src_request, clearance.is_src_approved 
+                $query = "SELECT student.id,student.index_no,student.src_request, clearance.is_src_approved
 		        FROM student INNER JOIN clearance on student.id=clearance.id
 		        WHERE clearance.id='$id' GROUP BY clearance.id";
 
@@ -98,7 +98,7 @@ $id=$_SESSION['id'];
                 <td>HOD(Student Accounts) </td>
                 <?php
                 $id=$_SESSION['id'];
-                $query = "SELECT student.id, student.account_request, student.index_no, clearance.is_account_approved 
+                $query = "SELECT student.id, student.account_request, student.index_no, clearance.is_account_approved
 		        FROM student INNER JOIN clearance on student.id=clearance.id
 		        WHERE clearance.id='$id' GROUP BY clearance.id";
                 $results = mysqli_query($con, $query);
@@ -121,7 +121,7 @@ $id=$_SESSION['id'];
                 <td>HOD Estate </td>
                 <?php
                 $id=$_SESSION['id'];
-                $query = "SELECT student.id, student.estate_request, student.index_no, clearance.is_estate_approved 
+                $query = "SELECT student.id, student.estate_request, student.index_no, clearance.is_estate_approved
 		        FROM student INNER JOIN clearance on student.id=clearance.id
 		        WHERE clearance.id='$id' GROUP BY clearance.id";
                 $results = mysqli_query($con, $query);
@@ -149,7 +149,7 @@ $id=$_SESSION['id'];
 		        WHERE clearance.id='$id' GROUP BY student.id";
 
                 $results = mysqli_query($con, $query);
-                $row=mysqli_fetch_assoc($results);
+                $row=mysqli_result($results);
                 if($row['index_no']==$_SESSION['index_no'] && $row['is_pws_approved']==1)
                 {
                     echo "<td>"."<h4 style='color:green;'>Cleared</h4>"."</td>"." ";
@@ -168,7 +168,7 @@ $id=$_SESSION['id'];
                 <td>HOD(Academics) </td>
                 <?php
                 $id=$_SESSION['id'];
-                $query = "SELECT student.id,student.index_no,student.hod_request, clearance.is_hod_approved 
+                $query = "SELECT student.id,student.index_no,student.hod_request, clearance.is_hod_approved
 		FROM student INNER JOIN clearance on student.id=clearance.id
 		WHERE clearance.id='$id'";
 
@@ -216,7 +216,7 @@ $id=$_SESSION['id'];
                 <td>Ag.Librarian </td>
                 <?php
                 $id=$_SESSION['id'];
-                $query = "SELECT student.id,student.index_no, student.library_request, clearance.is_library_approved 
+                $query = "SELECT student.id,student.index_no, student.library_request, clearance.is_library_approved
 		        FROM student INNER JOIN clearance on student.id=clearance.id
 		        WHERE clearance.id='$id'";
 
@@ -240,7 +240,7 @@ $id=$_SESSION['id'];
                 <td>Coordinator(CEID) </td>
                 <?php
                 $id=$_SESSION['id'];
-                $query = "SELECT student.id,student.index_no, student.ceid_request, clearance.is_ceid_approved 
+                $query = "SELECT student.id,student.index_no, student.ceid_request, clearance.is_ceid_approved
 		        FROM student INNER JOIN clearance on student.id=clearance.id
 		        WHERE clearance.id='$id'";
 
@@ -264,8 +264,8 @@ $id=$_SESSION['id'];
                 <td>Student Services </td>
                 <?php
                 $id=$_SESSION['id'];
-                $query = "SELECT student.id,student.index_no, student.student_service_request, 
-                clearance.is_student_service_approved 
+                $query = "SELECT student.id,student.index_no, student.student_service_request,
+                clearance.is_student_service_approved
 		        FROM student INNER JOIN clearance on student.id=clearance.id
 		        WHERE clearance.id='$id'";
 
@@ -291,22 +291,22 @@ $id=$_SESSION['id'];
 </section>
 
 <?php
-$query="SELECT 
-		                student.id, 
-		                student.index_no, 
-		                student.first_name, 
-		                student.last_name, 
+$query="SELECT
+		                student.id,
+		                student.index_no,
+		                student.first_name,
+		                student.last_name,
 		                student.status,
-		                clearance.is_library_approved, 
-		                clearance.is_account_approved, 
-		                clearance.is_src_approved, 
-		                clearance.is_sports_approved, 
-		                clearance.is_estate_approved, clearance.is_pws_approved, 
+		                clearance.is_library_approved,
+		                clearance.is_account_approved,
+		                clearance.is_src_approved,
+		                clearance.is_sports_approved,
+		                clearance.is_estate_approved, clearance.is_pws_approved,
 		                clearance.is_ceid_approved,
 		                clearance.is_student_service_approved,
-		clearance.is_hod_approved 
-		FROM student INNER JOIN clearance on '$id'=clearance.id 
-		WHERE clearance.id='$id' 
+		clearance.is_hod_approved
+		FROM student INNER JOIN clearance on '$id'=clearance.id
+		WHERE clearance.id='$id'
 		GROUP BY '$id'";
 $d=mysqli_query($con,$query);
 $fetch=mysqli_fetch_assoc($d);
