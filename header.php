@@ -1,14 +1,13 @@
-<?php
-include('shared/connection.php');
-?>
-<body>
-<head>
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="icon" href="images/icon.ico">
     <title>  K.T.U Student Clearance Portal | Welcome </title>
-    
+
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/responsee.css">
@@ -20,17 +19,42 @@ include('shared/connection.php');
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
     <script type="text/javascript" src="js/validation.js"></script> 
-</head>
-<header id="main-header">
-    <div class="container1">
-        <img src="images/ktu_logo.png">
-        <h1 style="font-size:40px"> K.T.U Clearance Portal</h1>
-    </div>
-</header>
-
-<nav id="navbar">
-    <div class="container">
-    <li><a href="index1.php">Home</a></li>
+  </head>  
+  <body class="size-1140">
+  
+    <!-- HEADER -->
+    <header role="banner">    
+      <!-- Top Bar -->
+      <div class="top-bar background-cyan">
+        <div class="line">
+          <div class="s-12 m-6 l-6">
+            <div class="top-bar-contact">
+              <p class="text-size-12">Contact Us: 0800 200 200 | <a class="text-orange-hover" href="mailto:contact@sampledomain.com">contact@sampledomain.com</a></p>
+            </div>
+          </div>
+          <div class="s-12 m-6 l-6">
+            <div class="right">
+              <ul class="top-bar-social right">
+                <li><a href="/"><i class="icon-facebook_circle text-orange-hover"></i></a></li>
+                <li><a href="/"><i class="icon-twitter_circle text-orange-hover"></i></a> </li>
+                <li><a href="/"><i class="icon-google_plus_circle text-orange-hover"></i></a></li>
+                <li><a href="/"><i class="icon-instagram_circle text-orange-hover"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Top Navigation -->
+      <nav class="background-white background-primary-hightlight"  >
+        <div class="line" >
+          <div class="s-12 l-2" >
+            <a href="index1.php" class="logo"><img src="img/icon.ico" alt=""></a>
+          </div>
+          <div class="top-nav s-12 l-10">
+            <p class="nav-text"></p>
+            <ul class="right chevron" style="text-align: right;" >
+              <li><a href="index1.php">Home</a></li>
               <!--<li><a href="products.php">Products</a></li>-->
               <li><a>Services</a>
                 <ul>
@@ -82,110 +106,16 @@ include('shared/connection.php');
                 </li>
                   
                 </li>
-    </div>
-</nav>
-<div class="container" style="background-color: white">
-    <section id="showcase">
-        <div class="container">
-            <img src="images/sk.jpg " style="width: 100%; height: 60%">
-                <!--<p> Flexible Clearance Web Portal <br>Technology has come to stay with us with accompanying ramifications and mixed blessings.
-                    <br>The influence of current and future Information Technology and their applications is beyond human imaginations. </p>
-        -->
+                </ul>
+              </li>
+            </li>
+            </ul>
+          </div>
         </div>
-    </section>
-</div>
-
-<div class="container">
-    <footer id="main-footer">
-        <p> Copyright &copy; 2018 KTU Clearance</p>
-    </footer>
-</div>
-<style>
-    body{
-        background:white;
-        color:#555;
-        font-family:Arial, Helvetica,sans-serif;
-        font-size:16px;
-        line-height:1.6em;
-        margin:0;
-        overflow: hidden;
-
-    }
-
-    .container{
-        width:80%;
-        margin:auto;
-        overflow:hidden;
-        text-align: right; 
-    }
-    #main-header{
-
-        background-color: rgb(7,133,191);
-        color:white;
-        box-sizing: border-box;
-
-
-    }
-    #main-header h1{
-
-        position:relative;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-    }
-    #navbar{
-        background-color: #fff;
-        color:#fff;
-    }
-    #navbar ul{
-        padding:0;
-        list-style: none;
-    }
-    #navbar li{
-        display:inline;
-    }
-    #navbar a{
-        color: black;
-        text-decoration: none;
-        font-size:18px;
-        padding:5px;
-    }
-
-    #navbar a:hover{
-        background-color: #ff2fb3;
-
-
-    }
-    #showcase {
-        /*background-color: rgba(224, 230, 255, 0.89);*/
-        /*min-height:380px;*/
-
-
-
-    }
-    #showcase p{
-        color: #010101;
-        line-height:2em;
-        font-size: 22px;
-        padding-top: 80px;
-    }
-
-
-    #main-footer{
-        background: rgb(7,133,191);
-        color:#fff;
-        text-align: center;
-        padding:5px;
-        margin-top:0px;
-    }
-    @media(max-width:600px){
-        #main{
-            width:100%;
-            float:none;
-        }
-
-
-    }
-</style>
-</body>
-</html>
-
+      </nav>
+    </header>
+    <script type="text/javascript" src="js/responsee.js"></script>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/template-scripts.js"></script>   
+   </body>
+</html>  

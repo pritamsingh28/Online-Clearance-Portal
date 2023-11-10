@@ -1,0 +1,38 @@
+div{
+    background: #660033;
+    width: 500px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 15px blue;
+    margin: auto;
+    padding: 20px;
+    color: greenyellow;
+}
+h2{
+    text-decoration: 3px rgb(0, 225, 255) underline;
+    text-align: center;
+}
+label ,span{
+    font-size: 18px;
+}
+span{
+    color: red;
+}
+[type="text"],[type="email"],{
+    width: 190px;
+    font-size:18px;
+    border:none;
+    outline: none;
+    padding-left:10px;
+    padding-right:10px;
+}
+button:hover{
+    cursor: pointer;
+    background: linear-gradient(to left,#ff00ff,#9900ff);
+    border-radius: 15px;
+}
+input{
+    accent-color: blue;
+}
+form{
+    text-align: center;
+}
