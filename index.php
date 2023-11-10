@@ -24,7 +24,7 @@ include('shared/connection.php');
 <header id="main-header">
     <div class="container1">
         <img src="images/ktu_logo.png">
-        <h1 style="font-size:40px"> K.T.U Clearance Portal</h1>
+        <h1 style="font-size:40px"> K.T.University Clearance Portal</h1>
     </div>
 </header>
 
