@@ -4,7 +4,11 @@ if(!isset($_SESSION['designee_name'])){
     header("location:designeelogin.php");
 }
 ?>
-
+<style>body{
+  background-image:url("img/registration-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}</style>
 
 <body>
 <head>
@@ -125,7 +129,7 @@ if(!isset($_SESSION['designee_name'])){
 
 
                             echo "<td>".
-                                "<button type='button' name='approve' id='approve' class='approve'> Approve 
+                                "<button type='button' name='approve' id='approve' class='approve'> Approve
 			</button>";
 
                             ?>
@@ -210,11 +214,10 @@ if(!isset($_SESSION['designee_name'])){
         </style>
         <style>
             body{
-                background:white;
-                color:#555;
-                font-family:Arial, Helvetica,sans-serif;
+
+
                 font-size:16px;
-                line-height:1.6em;
+                line-height:1.4em;
                 margin:0;
             }
 
@@ -223,13 +226,8 @@ if(!isset($_SESSION['designee_name'])){
                 margin:auto;
                 overflow:hidden
             }
-            #main-header{
-                background-color: rgb(7,133,191);
-                color:#fff;
-            }
-            #navbar{
-                background-color: white;
-                color:#fff;
+
+
             }
             #navbar ul{
                 padding:0;
@@ -250,9 +248,7 @@ if(!isset($_SESSION['designee_name'])){
 
 
             }
-            #showcase {
-                background-color: rgba(224, 230, 255, 0.89);
-                min-height:380px;
+
 
 
 
@@ -283,4 +279,3 @@ if(!isset($_SESSION['designee_name'])){
         </style>
     </div>
 </body>
-</html>
